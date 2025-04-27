@@ -11,6 +11,7 @@
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@headlessui/react": "^2.1.0",
+    "@heroicons/react": "^2.2.0",
     "@mapbox/rehype-prism": "^0.9.0",
     "@mdx-js/loader": "^3.0.0",
     "@mdx-js/react": "^3.0.0",
@@ -29,6 +30,7 @@
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
     "remark-gfm": "^4.0.0",
     "tailwind-plus-template": "file:",
     "tailwindcss": "^4.0.15",
