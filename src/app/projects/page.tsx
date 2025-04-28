@@ -13,7 +13,7 @@ const projects = [
     description:
       'Una mappa dell\'isola d\'Elba che mostra gli eventi delle prossime 24 ore, attualmente in sviluppo...',
     links: [
-      { href: '#', label: 'GitHub', icon: FaGithub },
+      { href: '#', label: 'GitHub (Coming Soon)', icon: FaGithub },
     ],
     icon: FaMap,
   },
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Progetti su cui ho lavorato per lasciare il mio segno nell'universo."
+      title="Progetti su cui ho lavorato."
       intro="Ho lavorato su molti progetti negli anni, ma questi sono i principali che posso mostrare pubblicamente. Puoi dare una visita al sito o consultare il codice."
     >
       <ul
