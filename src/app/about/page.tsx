@@ -1,7 +1,10 @@
+'use client'
+
 import { type Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { useState } from 'react'
 
 import { Container } from '@/components/Container'
 import {
@@ -17,16 +20,19 @@ function SocialLink({
   href,
   children,
   icon: Icon,
+  onClick,
 }: {
   className?: string
   href: string
   icon: React.ComponentType<{ className?: string }>
   children: React.ReactNode
+  onClick?: () => void
 }) {
   return (
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
+        onClick={onClick}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
       >
         <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
@@ -54,6 +60,14 @@ export const metadata: Metadata = {
 }
 
 export default function About() {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText('marco.riformato@gmail.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <Container className="mt-16 sm:mt-32">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -90,13 +104,20 @@ export default function About() {
             <SocialLink href="https://www.linkedin.com/in/marco-riformato/" icon={LinkedInIcon} className="mt-4">
               Follow on LinkedIn
             </SocialLink>
-            <SocialLink
-              href="mailto:marco.riformato@gmail.com"
-              icon={MailIcon}
-              className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-            >
-              marco.riformato@gmail.com
-            </SocialLink>
+            <div className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40">
+              <SocialLink
+                href="mailto:marco.riformato@gmail.com"
+                icon={MailIcon}
+                onClick={copyEmail}
+              >
+                marco.riformato@gmail.com
+              </SocialLink>
+              {copied && (
+                <p className="mt-2 text-sm text-teal-500 dark:text-teal-400">
+                  Email copiata!
+                </p>
+              )}
+            </div>
           </ul>
         </div>
       </div>
