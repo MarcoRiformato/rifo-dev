@@ -1,6 +1,5 @@
 'use client'
 
-import { type Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -51,12 +50,6 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
       />
     </svg>
   )
-}
-
-export const metadata: Metadata = {
-  title: 'Chi sono',
-  description:
-    'Sono Marco Riformato. Vivo nella campagna elbana, dove sviluppo il futuro.',
 }
 
 export default function About() {
