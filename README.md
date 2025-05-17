@@ -1,36 +1,39 @@
-# Spotlight
+# Marco Riformato - Sviluppatore Web & Consulente Digitale
 
-Spotlight is a [Tailwind Plus](https://tailwindcss.com/plus) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+Questo è il repository del sito personale e portfolio di Marco Riformato, sviluppatore web, project manager e consulente digitale.
 
-## Getting started
+## Come avviare il progetto
 
-To get started with this template, first install the npm dependencies:
+1. Installa le dipendenze:
 
 ```bash
 npm install
 ```
 
-Next, create a `.env.local` file in the root of your project and set the `NEXT_PUBLIC_SITE_URL` variable to your site's public URL:
+2. Crea un file `.env.local` nella root del progetto e imposta la variabile `NEXT_PUBLIC_SITE_URL` con l'URL pubblico del sito:
 
 ```
-NEXT_PUBLIC_SITE_URL=https://example.com
+NEXT_PUBLIC_SITE_URL=https://marcoriformato.it
 ```
 
-Next, run the development server:
+3. Avvia il server di sviluppo:
 
 ```bash
 npm run dev
 ```
 
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+4. Apri [http://localhost:3000](http://localhost:3000) nel browser per visualizzare il sito.
 
-## Customizing
+## Info & Contatti
 
-You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
+Per collaborazioni, consulenze o domande:
+- Email: marco@marcoriformato.it
+- LinkedIn: [linkedin.com/in/marco-riformato](https://www.linkedin.com/in/marco-riformato/)
+- Sito: [marcoriformato.it](https://marcoriformato.it)
 
-## License
+## Licenza
 
-This site template is a commercial product and is licensed under the [Tailwind Plus license](https://tailwindcss.com/plus/license).
+Questo sito utilizza componenti e template concessi in licenza da [Tailwind Plus](https://tailwindcss.com/plus/license).
 
 ## Learn more
 
