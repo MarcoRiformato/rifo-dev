@@ -12,10 +12,7 @@ import {
   LinkedInIcon,
   XIcon,
 } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
 import venezia from '@/images/photos/venezia.webp'
 import nave_pc from '@/images/photos/nave_pc.webp'
 import rurale_pc from '@/images/photos/rurale_pc.webp'
@@ -99,7 +96,7 @@ function Article({ article }: { article: ArticleWithSlug }) {
         {formatDate(article.date)}
       </Card.Eyebrow>
       <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
+      <Card.Cta>Leggi articolo</Card.Cta>
     </Card>
   )
 }
@@ -235,8 +232,20 @@ function Resume() {
     },
   ]
 
-  // Sort by start date descending
+  // Sort by current positions first, then by start date, with Forum Giovani Elba at the bottom
   resume.sort((a, b) => {
+    // Forum Giovani Elba always goes to the bottom
+    if (a.company === 'Forum Giovani Elba') return 1;
+    if (b.company === 'Forum Giovani Elba') return -1;
+    
+    const isCurrentA = typeof a.end === 'object' && a.end.label === 'Presente';
+    const isCurrentB = typeof b.end === 'object' && b.end.label === 'Presente';
+    
+    // If one is current and the other isn't, current comes first
+    if (isCurrentA && !isCurrentB) return -1;
+    if (!isCurrentA && isCurrentB) return 1;
+    
+    // If both are current or both are not current, sort by start date
     const getStart = (r: Role) => typeof r.start === 'string' ? r.start : r.start.dateTime;
     return getStart(b).localeCompare(getStart(a));
   });

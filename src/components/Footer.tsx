@@ -30,10 +30,11 @@ export function Footer() {
                 <NavLink href="/about">Chi sono</NavLink>
                 <NavLink href="/projects">Progetti</NavLink>
               </div>
-              <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Spencer Sharp. All rights
-                reserved.
-              </p>
+              <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+                <p className="text-xs text-zinc-400 dark:text-zinc-500">
+                  &copy; {new Date().getFullYear()} Marco Riformato. Tutti i diritti riservati.
+                </p>
+              </div>
             </div>
           </ContainerInner>
         </div>
